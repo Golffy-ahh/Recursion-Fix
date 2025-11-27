@@ -54,6 +54,8 @@ public class EncounterManager : MonoBehaviour
     private readonly System.Random _rng = new();
     private bool IsPlayerTurn => _turns.Current == Turn.Player;
     public event Action<bool> OnEncounterFinished;
+    private bool _inputLocked = false;
+
 
     // ====== Public entry: call this from your stage/dungeon flow ======
     public void StartEncounter(Player p, Enemy e)
@@ -193,6 +195,7 @@ public class EncounterManager : MonoBehaviour
             if (CheckEnd()) break;
             _turns.Next();
             _startedTurnAP = false;
+            _inputLocked = false; 
             SetInfo("Player Turn");
         }
 
@@ -204,7 +207,12 @@ public class EncounterManager : MonoBehaviour
     }
 
     // ================== Player actions ==================
-    private void OnAttack() => StartCoroutine(CoAttack());
+    private void OnAttack()
+    {
+        if (!IsPlayerTurn || _inputLocked) return;   // <- guard
+        _inputLocked = true;                         // <- lock immediately
+        StartCoroutine(CoAttack());
+    }
 
     private IEnumerator CoAttack()
     {
@@ -307,9 +315,9 @@ public class EncounterManager : MonoBehaviour
         bool showActions = !showSkills && IsPlayerTurn;
 
         if (actionPanel) actionPanel.SetActive(showActions);
-        if (attackButton) attackButton.interactable = showActions;
-        if (guardButton)  guardButton.interactable  = showActions;
-        if (skillButton)  skillButton.interactable  = showActions;
+        if (attackButton) attackButton.interactable = showActions && !_inputLocked;
+        if (guardButton)  guardButton.interactable  = showActions && !_inputLocked;
+        if (skillButton)  skillButton.interactable  = showActions && !_inputLocked;
 
         if (skillPanel) skillPanel.SetActive(showSkills);
         if (backBtn)    backBtn.interactable = showSkills;
