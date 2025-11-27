@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using static MapGenerator;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject regularEnemyGO; // drag your normal enemy GO
     [SerializeField] private GameObject bossEnemyGO;    // drag your boss enemy GO
     [SerializeField] private GameObject GameWinGO;
+    [SerializeField] private GameObject GameOverGO;   // drag your Game Over panel here
+
 
     [Header("Choice UI")]
     public ChoiceCard cardLeft;
@@ -22,6 +25,11 @@ public class GameManager : MonoBehaviour
 
     [Header("Labels")]
     public Text layerStageText;
+
+    [Header("Pause")]
+    [SerializeField] private GameObject pausePanel; // drag your Pause UI here
+    private bool _paused = false;
+
     [SerializeField] private GameObject choicePanel;
     private bool _lastEncounterWasBoss = false;
     
@@ -34,7 +42,22 @@ public class GameManager : MonoBehaviour
         if (!generator) Debug.LogError("GameManager: MapGenerator not assigned.");
         if (!encounter) Debug.LogError("GameManager: EncounterManager not assigned.");
 
+        if (GameWinGO)   GameWinGO.SetActive(false);
+        if (GameOverGO)  GameOverGO.SetActive(false);
+        if (pausePanel) pausePanel.SetActive(false);
         ShowChoices();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // don’t pause over win/lose screens
+            if (GameWinGO && GameWinGO.activeSelf) return;
+            if (GameOverGO && GameOverGO.activeSelf) return;
+
+            TogglePause();
+        }
     }
 
     void ShowChoices()
@@ -127,8 +150,13 @@ public class GameManager : MonoBehaviour
         encounter.OnEncounterFinished -= OnEncounterFinished;
         if (!win)
         {
-            // You can show a retry/quit UI here.
-            ShowChoices();
+            // Hide enemies and choices
+            if (regularEnemyGO) regularEnemyGO.SetActive(false);
+            if (bossEnemyGO)    bossEnemyGO.SetActive(false);
+            if (choicePanel)    choicePanel.SetActive(false);
+
+            // Show Game Over
+            if (GameOverGO) GameOverGO.SetActive(true);
             return;
         }
 
@@ -176,5 +204,36 @@ public class GameManager : MonoBehaviour
         }
 
         ShowChoices();
+    }
+
+    public void RetryRun()
+    {
+        Time.timeScale = 1f;
+
+        // Reload current scene (your Combat/Gameplay scene)
+        Scene current = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(current.buildIndex);
+    }
+
+    public void TogglePause()
+    {
+        if (_paused) Resume();
+        else         Pause();
+    }
+
+    public void Pause()
+    {
+        if (pausePanel) pausePanel.SetActive(true);
+        Time.timeScale = 0f;
+        AudioListener.pause = true;
+        _paused = true;
+    }
+
+    public void Resume()
+    {
+        if (pausePanel) pausePanel.SetActive(false);
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
+        _paused = false;
     }
 }
