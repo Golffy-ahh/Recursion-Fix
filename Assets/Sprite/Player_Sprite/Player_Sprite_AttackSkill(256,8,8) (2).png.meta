@@ -1,0 +1,1663 @@
+fileFormatVersion: 2
+guid: 6c110cc21f82ea14f9228f8cbbaa2877
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1920
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc2e84ba422f42647a8fbaa10bddb536
+      internalID: 1824840579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1920
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 880dd50b4e9d3c44085b473d209fb732
+      internalID: -95386002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1920
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b1d3070c2e1244b841d43c45180907
+      internalID: 2013782948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1920
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de67ca1c178d74640b10491fc709ac01
+      internalID: 1809923700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1920
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c094292257c8f4fa01f5f2bc689e44
+      internalID: -757439379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1920
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90841f956a8d9c744a32e845a0d66ffa
+      internalID: 1183699581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1920
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e7a30b2e847e94d9fa162256daa137
+      internalID: 964252525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1920
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1365777b82fe43b459f7d4ec37a435ea
+      internalID: -1426890617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1664
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b66377b4afbe07d46a9fe25c66ca9b9c
+      internalID: 404209197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_12
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1664
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ed3fbc61ccbb294586c19e11be83f95
+      internalID: -1053974534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_13
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1664
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d127569d3045d740b857ee5e08c8217
+      internalID: -576397602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_14
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1664
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e6abde9e89ef71448bda65fd720efc7
+      internalID: 995112611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_15
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1664
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 877c4396c9632bf45b0c2e33229ddcea
+      internalID: -534830673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_16
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1664
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e0ebdffbede2a94a885fc0b5f6bd0c0
+      internalID: -1905488985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_17
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1664
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2a10f6ae439559468d11462d7d82cf3
+      internalID: 1644434907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_18
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1664
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce50eba5c77ea954d87b3a42e7269104
+      internalID: 1650922071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1408
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec6ddb6ea14a7de49a7688c1fbaf4d68
+      internalID: -1012579346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_28
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1408
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e0a492e0ce527a4dad0a1bf0125609d
+      internalID: -941444283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_29
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1408
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0408946010498d6439c0d5f262ad175c
+      internalID: 636175072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_30
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1408
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1060994992a7b184d94456f1f6898e89
+      internalID: 2073870042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_31
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1408
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2027df706f63ad14eba3c8e8673173fa
+      internalID: 1758533420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_32
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1408
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0134f051b34997346b384671f02f958a
+      internalID: 1721481866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_33
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1408
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b3aeecfc17b3dc43abd2d68815b5fd0
+      internalID: -1568130701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_34
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1408
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e72d1bfbfeab08246b38e1e9d5fba327
+      internalID: -1729559238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_43
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1152
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cdcee025c9ccce41bac037c4d8abbb4
+      internalID: 2071101785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_44
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1152
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b3e336a97892604290935ed7cbbe609
+      internalID: 1075758707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_45
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1152
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 904299643d2d854429457b7bbbeceaa0
+      internalID: -1692250121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_46
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1152
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bf91b12871a34b4fb1c17be64bafbf7
+      internalID: 1531372717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_47
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1152
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ecf41276432bc1439ec2e80d7145970
+      internalID: 1553089471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_48
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1152
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40fb484a0059fd9498fd098470b2347d
+      internalID: 541218766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_49
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1152
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f289c40d0bc957745ab5eb4f2f0c5883
+      internalID: -863787496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_50
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1152
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b68eb6ea50a9bc445b8d5b28e1075f8a
+      internalID: -882589707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_59
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a37619d681d8454f8f6d77b8f4da0aa
+      internalID: -792743585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_60
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 896
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fed4b9ebfc5bade4c9534c5c1fbc27d0
+      internalID: -1062270831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_61
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 896
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac4d235db16677242ba2796abd1d6cd2
+      internalID: -476032240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_62
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 896
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54c2f5db5028c7545b2f86b44c512545
+      internalID: 2029374665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_63
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 896
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f86f5f71c1fc1354ba764dea11a5a81d
+      internalID: 1035171337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_64
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 896
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2302140358f263442b775ee2ed54ef1d
+      internalID: -105904541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_65
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 896
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7546da43d913d054aa03f8280ba7a6f7
+      internalID: -1257395724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_66
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 896
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8409f0302a5cc7428bbe18c97409341
+      internalID: 1768833650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da5ddc261ce7f9f4c9c06827b87952c9
+      internalID: 1352979311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_76
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 640
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a00e34895f2e72b4d962932d561de0d0
+      internalID: 962718843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_77
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 640
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f675260883aaed4996c711372d46f46
+      internalID: -156922176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_78
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 640
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b5553106fe8e0044ba6c054926ac379
+      internalID: -1986189234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_79
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 640
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e621c96081bf0e478bb3b64962ec89a
+      internalID: 1378834763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_80
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 640
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7716aabf10e16654fbdbeed65fa8ca7e
+      internalID: -1046910996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_81
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 640
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce87e9b7af2f7b649a855e01a834e8ee
+      internalID: 813334961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_82
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 640
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9106a025f551b34e8dafd3b6ec9818b
+      internalID: 715829783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_91
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b36856670b9310448cd71b29318c3dc
+      internalID: -1506429584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_92
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f08f9b2603973148b2e4dc51d113c1a
+      internalID: -1125226682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_93
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 384
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda5316668d84ab46ae65790009840ff
+      internalID: 726732935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_94
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 384
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00df3a41c1c74f746991bcf0a637e7eb
+      internalID: 197257176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_95
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 384
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a20d381156ccf549b55e33ee897b514
+      internalID: -561151024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_96
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 384
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b4d6e2626f14c04e91bf14d7c4530c6
+      internalID: 778645155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_97
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 384
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e12edcfd0d2b604790b94a2bfe038fc
+      internalID: -627592360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_98
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 384
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c0b3da695b775c449dd023cb7c6114c
+      internalID: 402140167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_107
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf04ff9e6d4c0d409d111f8930f76ff
+      internalID: -1570977061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_108
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff4267da98bf0f542b353e5c4beeca53
+      internalID: -1495442764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_109
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 128
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f060d6ac3193c441bd8bbef9883411f
+      internalID: 1799034885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_110
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 128
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c6ebf7c218f53b41bd05cb7949bf439
+      internalID: -1592026425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_111
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 128
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81d03c105b5b8174da1d91d2c3d89216
+      internalID: -2095865080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_112
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 128
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9390d83d392763418c7caf2aa691889
+      internalID: 1820369243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_113
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 128
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3c97bcf067165142b88b9826ae8a385
+      internalID: -1679970549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Sprite_AttackSkill(256,8,8) (2)_114
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 128
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a618f9270be9cf49adc3244f67e1592
+      internalID: -1889137996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 2469519d69856704e88145a3511a34e1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":1,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Player_Sprite_AttackSkill(256,8,8) (2)_0: 1824840579
+      Player_Sprite_AttackSkill(256,8,8) (2)_1: -95386002
+      Player_Sprite_AttackSkill(256,8,8) (2)_10: -1203443079
+      Player_Sprite_AttackSkill(256,8,8) (2)_100: 502019068
+      Player_Sprite_AttackSkill(256,8,8) (2)_101: 1769468551
+      Player_Sprite_AttackSkill(256,8,8) (2)_102: -802724681
+      Player_Sprite_AttackSkill(256,8,8) (2)_103: -781672797
+      Player_Sprite_AttackSkill(256,8,8) (2)_104: 550963617
+      Player_Sprite_AttackSkill(256,8,8) (2)_105: -312411311
+      Player_Sprite_AttackSkill(256,8,8) (2)_106: 123517309
+      Player_Sprite_AttackSkill(256,8,8) (2)_107: -1570977061
+      Player_Sprite_AttackSkill(256,8,8) (2)_108: -1495442764
+      Player_Sprite_AttackSkill(256,8,8) (2)_109: 1799034885
+      Player_Sprite_AttackSkill(256,8,8) (2)_11: 404209197
+      Player_Sprite_AttackSkill(256,8,8) (2)_110: -1592026425
+      Player_Sprite_AttackSkill(256,8,8) (2)_111: -2095865080
+      Player_Sprite_AttackSkill(256,8,8) (2)_112: 1820369243
+      Player_Sprite_AttackSkill(256,8,8) (2)_113: -1679970549
+      Player_Sprite_AttackSkill(256,8,8) (2)_114: -1889137996
+      Player_Sprite_AttackSkill(256,8,8) (2)_115: -1432588164
+      Player_Sprite_AttackSkill(256,8,8) (2)_116: 1826200784
+      Player_Sprite_AttackSkill(256,8,8) (2)_117: 506769851
+      Player_Sprite_AttackSkill(256,8,8) (2)_118: -1755460337
+      Player_Sprite_AttackSkill(256,8,8) (2)_119: 1598372331
+      Player_Sprite_AttackSkill(256,8,8) (2)_12: -1053974534
+      Player_Sprite_AttackSkill(256,8,8) (2)_120: -224613038
+      Player_Sprite_AttackSkill(256,8,8) (2)_121: 55663728
+      Player_Sprite_AttackSkill(256,8,8) (2)_122: 767498423
+      Player_Sprite_AttackSkill(256,8,8) (2)_13: -576397602
+      Player_Sprite_AttackSkill(256,8,8) (2)_14: 995112611
+      Player_Sprite_AttackSkill(256,8,8) (2)_15: -534830673
+      Player_Sprite_AttackSkill(256,8,8) (2)_16: -1905488985
+      Player_Sprite_AttackSkill(256,8,8) (2)_17: 1644434907
+      Player_Sprite_AttackSkill(256,8,8) (2)_18: 1650922071
+      Player_Sprite_AttackSkill(256,8,8) (2)_19: -1307522332
+      Player_Sprite_AttackSkill(256,8,8) (2)_2: 2013782948
+      Player_Sprite_AttackSkill(256,8,8) (2)_20: 1398692880
+      Player_Sprite_AttackSkill(256,8,8) (2)_21: 1737924828
+      Player_Sprite_AttackSkill(256,8,8) (2)_22: -328923694
+      Player_Sprite_AttackSkill(256,8,8) (2)_23: 153375517
+      Player_Sprite_AttackSkill(256,8,8) (2)_24: -798054829
+      Player_Sprite_AttackSkill(256,8,8) (2)_25: -1189169124
+      Player_Sprite_AttackSkill(256,8,8) (2)_26: 2124731638
+      Player_Sprite_AttackSkill(256,8,8) (2)_27: -1012579346
+      Player_Sprite_AttackSkill(256,8,8) (2)_28: -941444283
+      Player_Sprite_AttackSkill(256,8,8) (2)_29: 636175072
+      Player_Sprite_AttackSkill(256,8,8) (2)_3: 1809923700
+      Player_Sprite_AttackSkill(256,8,8) (2)_30: 2073870042
+      Player_Sprite_AttackSkill(256,8,8) (2)_31: 1758533420
+      Player_Sprite_AttackSkill(256,8,8) (2)_32: 1721481866
+      Player_Sprite_AttackSkill(256,8,8) (2)_33: -1568130701
+      Player_Sprite_AttackSkill(256,8,8) (2)_34: -1729559238
+      Player_Sprite_AttackSkill(256,8,8) (2)_35: 1621845671
+      Player_Sprite_AttackSkill(256,8,8) (2)_36: 1025038430
+      Player_Sprite_AttackSkill(256,8,8) (2)_37: 112835365
+      Player_Sprite_AttackSkill(256,8,8) (2)_38: 1873601819
+      Player_Sprite_AttackSkill(256,8,8) (2)_39: -1842410709
+      Player_Sprite_AttackSkill(256,8,8) (2)_4: -757439379
+      Player_Sprite_AttackSkill(256,8,8) (2)_40: -688809517
+      Player_Sprite_AttackSkill(256,8,8) (2)_41: -296636576
+      Player_Sprite_AttackSkill(256,8,8) (2)_42: -850354719
+      Player_Sprite_AttackSkill(256,8,8) (2)_43: 2071101785
+      Player_Sprite_AttackSkill(256,8,8) (2)_44: 1075758707
+      Player_Sprite_AttackSkill(256,8,8) (2)_45: -1692250121
+      Player_Sprite_AttackSkill(256,8,8) (2)_46: 1531372717
+      Player_Sprite_AttackSkill(256,8,8) (2)_47: 1553089471
+      Player_Sprite_AttackSkill(256,8,8) (2)_48: 541218766
+      Player_Sprite_AttackSkill(256,8,8) (2)_49: -863787496
+      Player_Sprite_AttackSkill(256,8,8) (2)_5: 1183699581
+      Player_Sprite_AttackSkill(256,8,8) (2)_50: -882589707
+      Player_Sprite_AttackSkill(256,8,8) (2)_51: -598317472
+      Player_Sprite_AttackSkill(256,8,8) (2)_52: 2108144070
+      Player_Sprite_AttackSkill(256,8,8) (2)_53: 738212027
+      Player_Sprite_AttackSkill(256,8,8) (2)_54: -1781140166
+      Player_Sprite_AttackSkill(256,8,8) (2)_55: 2019525559
+      Player_Sprite_AttackSkill(256,8,8) (2)_56: -1496560746
+      Player_Sprite_AttackSkill(256,8,8) (2)_57: 89161296
+      Player_Sprite_AttackSkill(256,8,8) (2)_58: -1565880963
+      Player_Sprite_AttackSkill(256,8,8) (2)_59: -792743585
+      Player_Sprite_AttackSkill(256,8,8) (2)_6: 964252525
+      Player_Sprite_AttackSkill(256,8,8) (2)_60: -1062270831
+      Player_Sprite_AttackSkill(256,8,8) (2)_61: -476032240
+      Player_Sprite_AttackSkill(256,8,8) (2)_62: 2029374665
+      Player_Sprite_AttackSkill(256,8,8) (2)_63: 1035171337
+      Player_Sprite_AttackSkill(256,8,8) (2)_64: -105904541
+      Player_Sprite_AttackSkill(256,8,8) (2)_65: -1257395724
+      Player_Sprite_AttackSkill(256,8,8) (2)_66: 1768833650
+      Player_Sprite_AttackSkill(256,8,8) (2)_67: 1137338488
+      Player_Sprite_AttackSkill(256,8,8) (2)_68: 1565222333
+      Player_Sprite_AttackSkill(256,8,8) (2)_69: 32352584
+      Player_Sprite_AttackSkill(256,8,8) (2)_7: -1426890617
+      Player_Sprite_AttackSkill(256,8,8) (2)_70: -360387969
+      Player_Sprite_AttackSkill(256,8,8) (2)_71: -1682250628
+      Player_Sprite_AttackSkill(256,8,8) (2)_72: -2113548970
+      Player_Sprite_AttackSkill(256,8,8) (2)_73: 1795065667
+      Player_Sprite_AttackSkill(256,8,8) (2)_74: 686811977
+      Player_Sprite_AttackSkill(256,8,8) (2)_75: 1352979311
+      Player_Sprite_AttackSkill(256,8,8) (2)_76: 962718843
+      Player_Sprite_AttackSkill(256,8,8) (2)_77: -156922176
+      Player_Sprite_AttackSkill(256,8,8) (2)_78: -1986189234
+      Player_Sprite_AttackSkill(256,8,8) (2)_79: 1378834763
+      Player_Sprite_AttackSkill(256,8,8) (2)_8: -924857105
+      Player_Sprite_AttackSkill(256,8,8) (2)_80: -1046910996
+      Player_Sprite_AttackSkill(256,8,8) (2)_81: 813334961
+      Player_Sprite_AttackSkill(256,8,8) (2)_82: 715829783
+      Player_Sprite_AttackSkill(256,8,8) (2)_83: 610441652
+      Player_Sprite_AttackSkill(256,8,8) (2)_84: -1753602293
+      Player_Sprite_AttackSkill(256,8,8) (2)_85: -358873688
+      Player_Sprite_AttackSkill(256,8,8) (2)_86: 1941976614
+      Player_Sprite_AttackSkill(256,8,8) (2)_87: 2145783649
+      Player_Sprite_AttackSkill(256,8,8) (2)_88: 313493691
+      Player_Sprite_AttackSkill(256,8,8) (2)_89: 193102830
+      Player_Sprite_AttackSkill(256,8,8) (2)_9: -164648704
+      Player_Sprite_AttackSkill(256,8,8) (2)_90: -635923447
+      Player_Sprite_AttackSkill(256,8,8) (2)_91: -1506429584
+      Player_Sprite_AttackSkill(256,8,8) (2)_92: -1125226682
+      Player_Sprite_AttackSkill(256,8,8) (2)_93: 726732935
+      Player_Sprite_AttackSkill(256,8,8) (2)_94: 197257176
+      Player_Sprite_AttackSkill(256,8,8) (2)_95: -561151024
+      Player_Sprite_AttackSkill(256,8,8) (2)_96: 778645155
+      Player_Sprite_AttackSkill(256,8,8) (2)_97: -627592360
+      Player_Sprite_AttackSkill(256,8,8) (2)_98: 402140167
+      Player_Sprite_AttackSkill(256,8,8) (2)_99: 1633768073
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
