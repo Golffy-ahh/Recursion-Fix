@@ -1,4 +1,4 @@
-// Skills/HeavySlashSkill.cs
+﻿// Skills/HeavySlashSkill.cs
 using System;
 using System.Collections;
 using UnityEngine;
@@ -17,13 +17,30 @@ public class HeavySlashSkill : ISkill
 
     public IEnumerator Perform(EncounterManager ctx, IIdentity user, IIdentity target, Action<bool> onDone)
     {
-        bool ok = false;
-        yield return ctx.ArrowQTE.RunQTE(s => ok = s);
-        if (!ok) { onDone?.Invoke(false); yield break; }
+        if (RequiresQTE && ctx.ArrowQTE != null)
+        {
+            bool ok = false;
+            yield return ctx.ArrowQTE.RunQTE(s => ok = s);
+            if (!ok)
+            {
+                onDone?.Invoke(false);
+                yield break;
+            }
+        }
 
-        if (!user.SpendAP(Cost)) { onDone?.Invoke(false); yield break; }
+        if (!user.SpendAP(Cost))
+        {
+            onDone?.Invoke(false);
+            yield break;
+        }
+
+        ctx.PlayPlayerSkillAnimation("Player_Skills_Attack");
+
+        yield return new WaitForSeconds(0.1f);
+
         target.TakeDamage(damage);
         ctx.FlashInfo($"{label} hits {damage}!");
+
         onDone?.Invoke(true);
     }
 }

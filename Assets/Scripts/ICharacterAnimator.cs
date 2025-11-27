@@ -1,16 +1,12 @@
+﻿// ICharacterAnimator.cs
 using UnityEngine;
 
-public class ICharacterAnimator : MonoBehaviour
+public interface ICharacterAnimator
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void PlayIdle();
+    void PlayAttack();
+    void PlayGuard();
+    void PlaySkill(string skillName = null);
+    void PlayHeal(string skillName = null);
+    void PlayDodge(string skillName = null);
 }

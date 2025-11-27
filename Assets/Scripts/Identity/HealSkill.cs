@@ -17,7 +17,6 @@ public class HealSkill : ISkill
 
     public IEnumerator Perform(EncounterManager ctx, IIdentity user, IIdentity target, Action<bool> onDone)
     {
-        // Arrow QTE gate
         if (RequiresQTE && ctx.ArrowQTE != null)
         {
             bool ok = false;
@@ -25,9 +24,19 @@ public class HealSkill : ISkill
             if (!ok) { onDone?.Invoke(false); yield break; }
         }
 
-        if (!user.SpendAP(Cost)) { onDone?.Invoke(false); yield break; }
+        if (!user.SpendAP(Cost))
+        {
+            onDone?.Invoke(false);
+            yield break;
+        }
+
+        ctx.PlayPlayerSkillAnimation("Player_Sprite_Heal");
+
+        yield return new WaitForSeconds(0.2f);
+
         user.Heal(amount);
         ctx.FlashInfo($"+{amount} HP");
+
         onDone?.Invoke(true);
     }
 }

@@ -40,6 +40,10 @@ public class EncounterManager : MonoBehaviour
     [SerializeField] private Text enemyDodgeText;
     [SerializeField] private float outcomeFlashSeconds = 0.6f;
 
+    [Header("Animation")]
+    [SerializeField] private MonoBehaviour playerAnimatorSource;
+    [SerializeField] private MonoBehaviour enemyAnimatorSource;
+    [SerializeField] private MonoBehaviour bossAnimatorSource;
     public ArrowQTEImages ArrowQTE => arrowQTE;
 
     private enum UIMode { Actions, Skills }
@@ -54,30 +58,49 @@ public class EncounterManager : MonoBehaviour
     private readonly System.Random _rng = new();
     private bool IsPlayerTurn => _turns.Current == Turn.Player;
     public event Action<bool> OnEncounterFinished;
-    private bool _inputLocked = false;
 
-
+    private ICharacterAnimator _playerAnim;
+    private ICharacterAnimator _enemyAnim;
     // ====== Public entry: call this from your stage/dungeon flow ======
-    public void StartEncounter(Player p, Enemy e)
+    public void StartEncounter(Player p, Enemy e, bool isBoss = false)
     {
         _player = p;
-        _enemy  = e;
+        _enemy = e;
+
+        _playerAnim = playerAnimatorSource as ICharacterAnimator;
+
+        if (isBoss && bossAnimatorSource != null)
+            _enemyAnim = bossAnimatorSource as ICharacterAnimator;
+        else
+            _enemyAnim = enemyAnimatorSource as ICharacterAnimator;
+
+        _playerAnim?.PlayIdle();
+        _enemyAnim?.PlayIdle();
 
         _turns.Reset(Turn.Player);
         _startedTurnAP = false;
-        _playerGuard   = false;
-        _ui            = UIMode.Actions;
-        _inputLocked = false; 
+        _playerGuard = false;
+        _ui = UIMode.Actions;
 
-        if (playerHPSlider) { playerHPSlider.minValue = 0; playerHPSlider.maxValue = _player.MaxHP; playerHPSlider.value = _player.HP; }
-        if (enemyHPSlider)  { enemyHPSlider .minValue = 0; enemyHPSlider .maxValue = _enemy.MaxHP; enemyHPSlider.value  = _enemy.HP; }
+        if (playerHPSlider)
+        {
+            playerHPSlider.minValue = 0;
+            playerHPSlider.maxValue = _player.MaxHP;
+            playerHPSlider.value = _player.HP;
+        }
+        if (enemyHPSlider)
+        {
+            enemyHPSlider.minValue = 0;
+            enemyHPSlider.maxValue = _enemy.MaxHP;
+            enemyHPSlider.value = _enemy.HP;
+        }
 
         if (world != null)
         {
             var tier = world.Current;
             ScaleEnemyForTier(tier.enemyStatMult);
             if (defenseQTE) defenseQTE.SetDuration(tier.qteTimeToFail);
-            if (arrowQTE)   arrowQTE.SetTotalTime(tier.ArrowQTETimer);
+            if (arrowQTE) arrowQTE.SetTotalTime(tier.ArrowQTETimer);
         }
 
         WireStaticButtons();
@@ -91,6 +114,7 @@ public class EncounterManager : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(MainLoop());
     }
+
 
     private void ScaleEnemyForTier(float mult)
     {
@@ -170,6 +194,8 @@ public class EncounterManager : MonoBehaviour
             _ui = UIMode.Actions;
             ApplyUIMode();
 
+            _enemyAnim?.PlayAttack();
+
             if (world && defenseQTE) defenseQTE.SetDuration(world.Current.qteTimeToFail);
 
             if (_playerGuard)
@@ -187,16 +213,27 @@ public class EncounterManager : MonoBehaviour
                 if (defenseQTE) yield return defenseQTE.RunDefense(r => res = r);
 
                 float dr = res == QTEResult.Perfect ? 1f : res == QTEResult.Good ? 0.5f : 0f;
+
+                if (dr == 1f)
+                {
+                    _playerAnim?.PlayDodge();
+                }
+                else if (dr == 0.5f)
+                {
+                    _playerAnim?.PlayGuard();
+                }
+
+
                 int dmg = Mathf.CeilToInt(_enemy.ATK * (1f - dr));
                 _player.TakeDamage(dmg);
                 UpdateHUD();
                 SetInfo($"QTE: {res}. You take {dmg}.");
+
             }
 
             if (CheckEnd()) break;
             _turns.Next();
             _startedTurnAP = false;
-            _inputLocked = false; 
             SetInfo("Player Turn");
         }
 
@@ -208,17 +245,13 @@ public class EncounterManager : MonoBehaviour
     }
 
     // ================== Player actions ==================
-    private void OnAttack()
-    {
-        if (!IsPlayerTurn || _inputLocked) return;   // <- guard
-        _inputLocked = true;                         // <- lock immediately
-        StartCoroutine(CoAttack());
-    }
+    private void OnAttack() => StartCoroutine(CoAttack());
 
     private IEnumerator CoAttack()
     {
         _ui = UIMode.Actions; 
         ApplyUIMode();
+        _playerAnim?.PlayAttack();
 
         // Enemy RNG outcome (dodge / guard / none)
         float dr = 0f;
@@ -228,11 +261,13 @@ public class EncounterManager : MonoBehaviour
         {
             dr = 1f;        // full avoid
             outcome = "Dodge";
+            _enemyAnim?.PlayDodge();
         }
         else if (roll < 0.35)
         {
             dr = 0.5f;      // half damage
             outcome = "Guard";
+            _enemyAnim?.PlayGuard();
         }
 
         // Flash popup
@@ -240,6 +275,7 @@ public class EncounterManager : MonoBehaviour
 
         int dmg = Mathf.CeilToInt(_player.ATK * (1f - dr));
         _enemy.TakeDamage(dmg);
+        if (_enemy.HP > 0)
         UpdateHUD();
         SetInfo(outcome == "Dodge"
             ? "Enemy dodged!"
@@ -258,9 +294,16 @@ public class EncounterManager : MonoBehaviour
         _ui = UIMode.Actions; 
         ApplyUIMode();
         _playerGuard = true;
+
+        _playerAnim?.PlayGuard();
+
         SetInfo("You brace yourself (Guard).");
         _turns.Next();
         _startedTurnAP = false;
+    }
+    public void PlayPlayerSkillAnimation(string triggerName = null)
+    {
+        _playerAnim?.PlaySkill(triggerName);
     }
 
     private void OnOpenSkills()
@@ -316,9 +359,9 @@ public class EncounterManager : MonoBehaviour
         bool showActions = !showSkills && IsPlayerTurn;
 
         if (actionPanel) actionPanel.SetActive(showActions);
-        if (attackButton) attackButton.interactable = showActions && !_inputLocked;
-        if (guardButton)  guardButton.interactable  = showActions && !_inputLocked;
-        if (skillButton)  skillButton.interactable  = showActions && !_inputLocked;
+        if (attackButton) attackButton.interactable = showActions;
+        if (guardButton)  guardButton.interactable  = showActions;
+        if (skillButton)  skillButton.interactable  = showActions;
 
         if (skillPanel) skillPanel.SetActive(showSkills);
         if (backBtn)    backBtn.interactable = showSkills;

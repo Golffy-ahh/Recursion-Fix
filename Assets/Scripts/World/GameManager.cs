@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using static MapGenerator;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,8 +14,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject regularEnemyGO; // drag your normal enemy GO
     [SerializeField] private GameObject bossEnemyGO;    // drag your boss enemy GO
     [SerializeField] private GameObject GameWinGO;
-    [SerializeField] private GameObject GameOverGO;   // drag your Game Over panel here
-
 
     [Header("Choice UI")]
     public ChoiceCard cardLeft;
@@ -25,11 +22,6 @@ public class GameManager : MonoBehaviour
 
     [Header("Labels")]
     public Text layerStageText;
-
-    [Header("Pause")]
-    [SerializeField] private GameObject pausePanel; // drag your Pause UI here
-    private bool _paused = false;
-
     [SerializeField] private GameObject choicePanel;
     private bool _lastEncounterWasBoss = false;
     
@@ -42,22 +34,7 @@ public class GameManager : MonoBehaviour
         if (!generator) Debug.LogError("GameManager: MapGenerator not assigned.");
         if (!encounter) Debug.LogError("GameManager: EncounterManager not assigned.");
 
-        if (GameWinGO)   GameWinGO.SetActive(false);
-        if (GameOverGO)  GameOverGO.SetActive(false);
-        if (pausePanel) pausePanel.SetActive(false);
         ShowChoices();
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            // don’t pause over win/lose screens
-            if (GameWinGO && GameWinGO.activeSelf) return;
-            if (GameOverGO && GameOverGO.activeSelf) return;
-
-            TogglePause();
-        }
     }
 
     void ShowChoices()
@@ -127,22 +104,22 @@ public class GameManager : MonoBehaviour
     }
 
     void StartEncounter(bool isBoss)
-    {   
-        _lastEncounterWasBoss = isBoss; 
+    {
+        _lastEncounterWasBoss = isBoss;
         ClearAllCards();
 
         if (regularEnemyGO) regularEnemyGO.SetActive(!isBoss);
-        if (bossEnemyGO)    bossEnemyGO.SetActive(isBoss);
-        // Build simple Player/Enemy using your constructors or injected instances.
-        var p = new Player("Hero", 100, 15, 0); // HP/ATK/AP (AP resets at encounter start anyway)
+        if (bossEnemyGO) bossEnemyGO.SetActive(isBoss);
+
+        var p = new Player("Hero", 100, 15, 0);
         var e = isBoss
             ? new Enemy("Gate-Binder", 80, 20)
             : new Enemy($"Grunt T{world.CurrentIndex + 1}", 20, 10);
 
-        // Let EncounterManager scale QTE/difficulty using world.Current (already implemented).
         encounter.OnEncounterFinished -= OnEncounterFinished;
         encounter.OnEncounterFinished += OnEncounterFinished;
-        encounter.StartEncounter(p, e);
+
+        encounter.StartEncounter(p, e, isBoss);
     }
 
     void OnEncounterFinished(bool win)
@@ -150,25 +127,10 @@ public class GameManager : MonoBehaviour
         encounter.OnEncounterFinished -= OnEncounterFinished;
         if (!win)
         {
-            // Hide enemies and choices
-            if (regularEnemyGO) regularEnemyGO.SetActive(false);
-            if (bossEnemyGO)    bossEnemyGO.SetActive(false);
-            if (choicePanel)    choicePanel.SetActive(false);
-
-            // Show Game Over
-            if (GameOverGO) GameOverGO.SetActive(true);
+            // You can show a retry/quit UI here.
+            ShowChoices();
             return;
         }
-
-        if (_lastEncounterWasBoss)
-        {
-        if (regularEnemyGO) regularEnemyGO.SetActive(false);
-        if (bossEnemyGO)    bossEnemyGO.SetActive(false);
-        if (choicePanel)    choicePanel.SetActive(false);
-        if (GameWinGO)      GameWinGO.SetActive(true);  // <— WIN SCREEN
-        return;
-        }
-        
 
         // If we are on Tier 4 (boss), advancing layer ends the run or loops.
         if (world.CurrentIndex >= 3)
@@ -180,6 +142,14 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        if (_lastEncounterWasBoss)
+        {
+        if (regularEnemyGO) regularEnemyGO.SetActive(false);
+        if (bossEnemyGO)    bossEnemyGO.SetActive(false);
+        if (choicePanel)    choicePanel.SetActive(false);
+        if (GameWinGO)      GameWinGO.SetActive(true);  // <— WIN SCREEN
+        return;
+        }
         
         if (choicePanel) choicePanel.SetActive(true);
         // Normal tier: count stage progress
@@ -206,42 +176,5 @@ public class GameManager : MonoBehaviour
         }
 
         ShowChoices();
-    }
-
-    public void SkipLayer()
-    {
-        world.SetCurrentIndex(world.CurrentIndex + 1);
-        ShowChoices();
-    }
-
-    public void RetryRun()
-    {
-        Time.timeScale = 1f;
-
-        // Reload current scene (your Combat/Gameplay scene)
-        Scene current = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(current.buildIndex);
-    }
-
-    public void TogglePause()
-    {
-        if (_paused) Resume();
-        else         Pause();
-    }
-
-    public void Pause()
-    {
-        if (pausePanel) pausePanel.SetActive(true);
-        Time.timeScale = 0f;
-        AudioListener.pause = true;
-        _paused = true;
-    }
-
-    public void Resume()
-    {
-        if (pausePanel) pausePanel.SetActive(false);
-        Time.timeScale = 1f;
-        AudioListener.pause = false;
-        _paused = false;
     }
 }
