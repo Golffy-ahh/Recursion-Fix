@@ -160,6 +160,16 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        if (_lastEncounterWasBoss)
+        {
+        if (regularEnemyGO) regularEnemyGO.SetActive(false);
+        if (bossEnemyGO)    bossEnemyGO.SetActive(false);
+        if (choicePanel)    choicePanel.SetActive(false);
+        if (GameWinGO)      GameWinGO.SetActive(true);  // <— WIN SCREEN
+        return;
+        }
+        
+
         // If we are on Tier 4 (boss), advancing layer ends the run or loops.
         if (world.CurrentIndex >= 3)
         {
@@ -170,14 +180,6 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        if (_lastEncounterWasBoss)
-        {
-        if (regularEnemyGO) regularEnemyGO.SetActive(false);
-        if (bossEnemyGO)    bossEnemyGO.SetActive(false);
-        if (choicePanel)    choicePanel.SetActive(false);
-        if (GameWinGO)      GameWinGO.SetActive(true);  // <— WIN SCREEN
-        return;
-        }
         
         if (choicePanel) choicePanel.SetActive(true);
         // Normal tier: count stage progress
