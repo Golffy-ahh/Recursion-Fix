@@ -67,6 +67,7 @@ public class EncounterManager : MonoBehaviour
         _startedTurnAP = false;
         _playerGuard   = false;
         _ui            = UIMode.Actions;
+        _inputLocked = false; 
 
         if (playerHPSlider) { playerHPSlider.minValue = 0; playerHPSlider.maxValue = _player.MaxHP; playerHPSlider.value = _player.HP; }
         if (enemyHPSlider)  { enemyHPSlider .minValue = 0; enemyHPSlider .maxValue = _enemy.MaxHP; enemyHPSlider.value  = _enemy.HP; }
