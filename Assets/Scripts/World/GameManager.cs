@@ -206,6 +206,12 @@ public class GameManager : MonoBehaviour
         ShowChoices();
     }
 
+    public void SkipLayer()
+    {
+        world.SetCurrentIndex(world.CurrentIndex + 1);
+        ShowChoices();
+    }
+
     public void RetryRun()
     {
         Time.timeScale = 1f;
