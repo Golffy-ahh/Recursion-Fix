@@ -24,18 +24,28 @@ public class GameManager : MonoBehaviour
     public Text layerStageText;
     [SerializeField] private GameObject choicePanel;
     private bool _lastEncounterWasBoss = false;
-    
+    [Header("Audio / BGM")]
+    [SerializeField] private MonoBehaviour audioServiceSource;
+    [SerializeField] private AudioClip normalBattleBGM; 
+    [SerializeField] private AudioClip bossBattleBGM;
+    private IAudioService audioService;
+
+
     // simple persistent state
     int _stageInLayer = 1; // 1..3 (Layer 4 is boss flow)
 
     void Start()
     {
-        if (!world)  Debug.LogError("GameManager: WorldTierManager not assigned.");
+        if (!world) Debug.LogError("GameManager: WorldTierManager not assigned.");
         if (!generator) Debug.LogError("GameManager: MapGenerator not assigned.");
         if (!encounter) Debug.LogError("GameManager: EncounterManager not assigned.");
 
+        if (audioServiceSource != null)
+            audioService = audioServiceSource as IAudioService;
+
         ShowChoices();
     }
+
 
     void ShowChoices()
     {
@@ -119,28 +129,30 @@ public class GameManager : MonoBehaviour
         encounter.OnEncounterFinished -= OnEncounterFinished;
         encounter.OnEncounterFinished += OnEncounterFinished;
 
+        if (audioService != null)
+        {
+            var bgm = isBoss ? bossBattleBGM : normalBattleBGM;
+            audioService.PlayMusic(bgm);
+        }
+
         encounter.StartEncounter(p, e, isBoss);
     }
+
 
     void OnEncounterFinished(bool win)
     {
         encounter.OnEncounterFinished -= OnEncounterFinished;
+
+        if (audioService != null)
+            audioService.StopMusic();
+
         if (!win)
         {
-            // You can show a retry/quit UI here.
             ShowChoices();
             return;
         }
 
-        // If we are on Tier 4 (boss), advancing layer ends the run or loops.
-        if (world.CurrentIndex >= 3)
-        {
-            // End of run — reset to Layer 1, Stage 1
-            world.SetCurrentIndex(0);
-            _stageInLayer = 1;
-            ShowChoices();
-            return;
-        }
+
 
         if (_lastEncounterWasBoss)
         {

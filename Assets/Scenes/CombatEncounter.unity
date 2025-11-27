@@ -6976,7 +6976,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -7070,8 +7070,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35931a043a1c5aa42bee9f4ca74b8854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioService
-  oneShotSource: {fileID: 1541323249}
-  loopTemplate: {fileID: 1541323249}
+  sfxSource: {fileID: 1541323249}
+  musicSource: {fileID: 1541323249}
 --- !u!4 &1541323251
 Transform:
   m_ObjectHideFlags: 0
@@ -9370,6 +9370,9 @@ MonoBehaviour:
   cardRight: {fileID: 444095548}
   layerStageText: {fileID: 222334431}
   choicePanel: {fileID: 1041848788}
+  audioServiceSource: {fileID: 1541323250}
+  normalBattleBGM: {fileID: 8300000, guid: cf2bc32dc721012469c0f60f1c97af81, type: 3}
+  bossBattleBGM: {fileID: 8300000, guid: d05faa21191dfe64a92c70938981c459, type: 3}
 --- !u!1 &2104959612
 GameObject:
   m_ObjectHideFlags: 0

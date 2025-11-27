@@ -1,73 +1,42 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class AudioService : MonoBehaviour, IAudioService
 {
-    [Header("OneShot / SFX")]
-    [SerializeField] private AudioSource oneShotSource;
+    [Header("SFX (Effect)")]
+    [SerializeField] private AudioSource sfxSource;
 
-    [Header("Loop Template (BGM / Ambient)")]
-    [SerializeField] private AudioSource loopTemplate;
-
-    private class LoopHandle : ILoopHandle
-    {
-        public AudioSource source;
-    }
+    [Header("Music / BGM")]
+    [SerializeField] private AudioSource musicSource;
 
     private void Awake()
     {
-        if (!oneShotSource)
-        {
-            oneShotSource = GetComponent<AudioSource>();
-            if (!oneShotSource)
-                oneShotSource = gameObject.AddComponent<AudioSource>();
-        }
+        if (!sfxSource)
+            sfxSource = GetComponent<AudioSource>();
     }
 
     public void PlayOneShot(AudioClip clip, float volume = 1f)
     {
-        if (!clip || !oneShotSource) return;
-        oneShotSource.PlayOneShot(clip, volume);
+        if (!clip || !sfxSource) return;
+        sfxSource.PlayOneShot(clip, volume);
     }
 
-    public void PlayOneShotAtPoint(AudioClip clip, Vector3 position, float volume = 1f)
+    public void PlayMusic(AudioClip clip, float volume = 1f)
     {
-        if (!clip) return;
-        AudioSource.PlayClipAtPoint(clip, position, volume);
+        if (!clip || !musicSource) return;
+
+        if (musicSource.clip == clip && musicSource.isPlaying)
+            return;
+
+        musicSource.clip = clip;
+        musicSource.volume = volume;
+        musicSource.loop = true;
+        musicSource.Play();
     }
 
-    public ILoopHandle PlayLoop(AudioClip clip, float volume = 1f)
+    public void StopMusic()
     {
-        if (!clip) return null;
-
-        AudioSource src;
-
-        if (loopTemplate != null)
-        {
-            src = Instantiate(loopTemplate, transform);
-        }
-        else
-        {
-            var go = new GameObject("LoopAudio");
-            go.transform.SetParent(transform);
-            src = go.AddComponent<AudioSource>();
-            src.loop = true;
-        }
-
-        src.clip = clip;
-        src.volume = volume;
-        src.loop = true;
-        src.Play();
-
-        return new LoopHandle { source = src };
-    }
-
-    public void StopLoop(ILoopHandle handle)
-    {
-        if (handle is not LoopHandle h || h.source == null) return;
-
-        if (h.source.isPlaying)
-            h.source.Stop();
-
-        Destroy(h.source.gameObject);
+        if (musicSource != null && musicSource.isPlaying)
+            musicSource.Stop();
     }
 }
