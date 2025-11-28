@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using static MapGenerator;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject regularEnemyGO; // drag your normal enemy GO
     [SerializeField] private GameObject bossEnemyGO;    // drag your boss enemy GO
     [SerializeField] private GameObject GameWinGO;
+    [SerializeField] private GameObject GameOverGO;
 
     [Header("Choice UI")]
     public ChoiceCard cardLeft;
@@ -23,11 +25,18 @@ public class GameManager : MonoBehaviour
     [Header("Labels")]
     public Text layerStageText;
     [SerializeField] private GameObject choicePanel;
+
+    [Header("Pause")]
+    [SerializeField] private GameObject pausePanel; // drag your Pause UI here
+    private bool _paused = false;
     private bool _lastEncounterWasBoss = false;
     [Header("Audio / BGM")]
     [SerializeField] private MonoBehaviour audioServiceSource;
-    [SerializeField] private AudioClip normalBattleBGM; 
+    [SerializeField] private AudioClip ChoiceStageBGM;
+    [SerializeField] private AudioClip normalBattleBGM;
     [SerializeField] private AudioClip bossBattleBGM;
+    [SerializeField] private AudioClip GameWinBGM;
+    [SerializeField] private AudioClip GameOverBGM;
     private IAudioService audioService;
 
 
@@ -43,9 +52,23 @@ public class GameManager : MonoBehaviour
         if (audioServiceSource != null)
             audioService = audioServiceSource as IAudioService;
 
+        if (GameWinGO)   GameWinGO.SetActive(false);
+        if (GameOverGO)  GameOverGO.SetActive(false);
+        if (pausePanel) pausePanel.SetActive(false);
         ShowChoices();
     }
 
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                // don’t pause over win/lose screens
+                if (GameWinGO && GameWinGO.activeSelf) return;
+                if (GameOverGO && GameOverGO.activeSelf) return;
+
+                TogglePause();
+            }
+        }
 
     void ShowChoices()
     {
@@ -148,25 +171,36 @@ public class GameManager : MonoBehaviour
 
         if (!win)
         {
-            ShowChoices();
+            if (audioService != null && GameOverBGM != null)
+                audioService.PlayMusic(GameOverBGM);
+
+            if (regularEnemyGO) regularEnemyGO.SetActive(false);
+            if (bossEnemyGO) bossEnemyGO.SetActive(false);
+            if (choicePanel) choicePanel.SetActive(false);
+
+            if (GameOverGO) GameOverGO.SetActive(true);
             return;
         }
 
-
-
         if (_lastEncounterWasBoss)
         {
-        if (regularEnemyGO) regularEnemyGO.SetActive(false);
-        if (bossEnemyGO)    bossEnemyGO.SetActive(false);
-        if (choicePanel)    choicePanel.SetActive(false);
-        if (GameWinGO)      GameWinGO.SetActive(true);  // <— WIN SCREEN
-        return;
+            if (audioService != null && GameWinBGM != null)
+                audioService.PlayMusic(GameWinBGM);
+
+            if (regularEnemyGO) regularEnemyGO.SetActive(false);
+            if (bossEnemyGO) bossEnemyGO.SetActive(false);
+            if (choicePanel) choicePanel.SetActive(false);
+            if (GameWinGO) GameWinGO.SetActive(true);
+            return;
         }
-        
+
+        if (audioService != null && ChoiceStageBGM != null)
+            audioService.PlayMusic(ChoiceStageBGM);
+
         if (choicePanel) choicePanel.SetActive(true);
-        // Normal tier: count stage progress
         AdvanceStage();
     }
+
 
     void AdvanceStage()
     {
@@ -188,5 +222,43 @@ public class GameManager : MonoBehaviour
         }
 
         ShowChoices();
+    }
+
+    public void SkipLayer()
+    {
+        world.SetCurrentIndex(world.CurrentIndex + 1);
+        UpdateLayerStageLabel();
+        ShowChoices();
+    }
+
+        public void RetryRun()
+    {
+        Time.timeScale = 1f;
+
+        // Reload current scene (your Combat/Gameplay scene)
+        Scene current = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(current.buildIndex);
+    }
+
+    public void TogglePause()
+    {
+        if (_paused) Resume();
+        else         Pause();
+    }
+
+    public void Pause()
+    {
+        if (pausePanel) pausePanel.SetActive(true);
+        Time.timeScale = 0f;
+        AudioListener.pause = true;
+        _paused = true;
+    }
+
+    public void Resume()
+    {
+        if (pausePanel) pausePanel.SetActive(false);
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
+        _paused = false;
     }
 }
