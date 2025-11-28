@@ -32,7 +32,8 @@ public class GameManager : MonoBehaviour
     private bool _lastEncounterWasBoss = false;
     [Header("Audio / BGM")]
     [SerializeField] private MonoBehaviour audioServiceSource;
-    [SerializeField] private AudioClip normalBattleBGM; 
+    [SerializeField] private AudioClip ChoiceStageBGM;
+    [SerializeField] private AudioClip normalBattleBGM;
     [SerializeField] private AudioClip bossBattleBGM;
     [SerializeField] private AudioClip GameWinBGM;
     [SerializeField] private AudioClip GameOverBGM;
