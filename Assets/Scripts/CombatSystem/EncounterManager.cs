@@ -58,6 +58,8 @@ public class EncounterManager : MonoBehaviour
     private readonly System.Random _rng = new();
     private bool IsPlayerTurn => _turns.Current == Turn.Player;
     public event Action<bool> OnEncounterFinished;
+    private bool _inputLocked = false;   // prevents multi-click spam during a turn
+
 
     private ICharacterAnimator _playerAnim;
     private ICharacterAnimator _enemyAnim;
@@ -112,6 +114,7 @@ public class EncounterManager : MonoBehaviour
         SetInfo("Player Turn");
 
         StopAllCoroutines();
+        _inputLocked = false;
         StartCoroutine(MainLoop());
     }
 
@@ -182,6 +185,7 @@ public class EncounterManager : MonoBehaviour
                 {
                     _player.AP = Mathf.Min(apMax, _player.AP + 1);
                     _startedTurnAP = true;
+                    _inputLocked = false;
                     UpdateHUD();
                 }
 
@@ -245,7 +249,12 @@ public class EncounterManager : MonoBehaviour
     }
 
     // ================== Player actions ==================
-    private void OnAttack() => StartCoroutine(CoAttack());
+    private void OnAttack()
+    {
+        if (!IsPlayerTurn || _inputLocked) return;   // <<< guard
+        _inputLocked = true;                         // <<< lock now
+        StartCoroutine(CoAttack());
+    }
 
     private IEnumerator CoAttack()
     {
@@ -291,12 +300,13 @@ public class EncounterManager : MonoBehaviour
 
     private void OnGuard()
     {
+        if (!IsPlayerTurn || _inputLocked) return;   // <<< guard
+        _inputLocked = true;                         // <<< lock now
+
         _ui = UIMode.Actions; 
         ApplyUIMode();
         _playerGuard = true;
-
         _playerAnim?.PlayGuard();
-
         SetInfo("You brace yourself (Guard).");
         _turns.Next();
         _startedTurnAP = false;
@@ -308,6 +318,7 @@ public class EncounterManager : MonoBehaviour
 
     private void OnOpenSkills()
     {
+        if (!IsPlayerTurn || _inputLocked) return;
         BuildSkillButtonsFromPlayer();
         RefreshSkillInteractable();
         _ui = UIMode.Skills;
@@ -323,7 +334,9 @@ public class EncounterManager : MonoBehaviour
     }
 
     private IEnumerator CastSkill(ISkill skill)
-    {
+    {   
+        if (!IsPlayerTurn || _inputLocked) yield break; // <<< guard
+        _inputLocked = true;                             // <<< lock for the skill flow
         bool finished = false;
 
         // Delegate AP check + ArrowQTE execution to the Skill itself
@@ -359,9 +372,11 @@ public class EncounterManager : MonoBehaviour
         bool showActions = !showSkills && IsPlayerTurn;
 
         if (actionPanel) actionPanel.SetActive(showActions);
-        if (attackButton) attackButton.interactable = showActions;
-        if (guardButton)  guardButton.interactable  = showActions;
-        if (skillButton)  skillButton.interactable  = showActions;
+        bool canClick = showActions && !_inputLocked;
+
+        if (attackButton) attackButton.interactable = canClick;
+        if (guardButton)  guardButton.interactable  = canClick;
+        if (skillButton)  skillButton.interactable  = canClick;
 
         if (skillPanel) skillPanel.SetActive(showSkills);
         if (backBtn)    backBtn.interactable = showSkills;

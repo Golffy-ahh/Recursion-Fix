@@ -10123,7 +10123,7 @@ MonoBehaviour:
   cardRight: {fileID: 444095548}
   layerStageText: {fileID: 222334431}
   choicePanel: {fileID: 1041848788}
-  pausePanel: {fileID: 0}
+  pausePanel: {fileID: 1685064076}
   audioServiceSource: {fileID: 1541323250}
   ChoiceStageBGM: {fileID: 0}
   normalBattleBGM: {fileID: 8300000, guid: cf2bc32dc721012469c0f60f1c97af81, type: 3}
