@@ -49,9 +49,9 @@ public class MapGenerator : MonoBehaviour
             var left  = RandomSide();
             var right = RandomSide();
 
-            nodes.Add(left);
             nodes.Add(Make(NodeType.Boss, "Boss", "Final Test", bossSprite));
-            nodes.Add(right);
+            nodes.Add(Make(NodeType.Boss, "Boss", "Final Test", bossSprite));
+            nodes.Add(Make(NodeType.Boss, "Boss", "Final Test", bossSprite));
         }
 
         return nodes;
