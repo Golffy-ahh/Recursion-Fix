@@ -171,31 +171,36 @@ public class GameManager : MonoBehaviour
 
         if (!win)
         {
-            // Hide enemies and choices
-            if (regularEnemyGO) regularEnemyGO.SetActive(false);
-            if (bossEnemyGO)    bossEnemyGO.SetActive(false);
-            if (choicePanel)    choicePanel.SetActive(false);
+            if (audioService != null && GameOverBGM != null)
+                audioService.PlayMusic(GameOverBGM);
 
-            // Show Game Over
+            if (regularEnemyGO) regularEnemyGO.SetActive(false);
+            if (bossEnemyGO) bossEnemyGO.SetActive(false);
+            if (choicePanel) choicePanel.SetActive(false);
+
             if (GameOverGO) GameOverGO.SetActive(true);
             return;
         }
 
-
-
         if (_lastEncounterWasBoss)
         {
-        if (regularEnemyGO) regularEnemyGO.SetActive(false);
-        if (bossEnemyGO)    bossEnemyGO.SetActive(false);
-        if (choicePanel)    choicePanel.SetActive(false);
-        if (GameWinGO)      GameWinGO.SetActive(true);  // <— WIN SCREEN
-        return;
+            if (audioService != null && GameWinBGM != null)
+                audioService.PlayMusic(GameWinBGM);
+
+            if (regularEnemyGO) regularEnemyGO.SetActive(false);
+            if (bossEnemyGO) bossEnemyGO.SetActive(false);
+            if (choicePanel) choicePanel.SetActive(false);
+            if (GameWinGO) GameWinGO.SetActive(true);
+            return;
         }
-        
+
+        if (audioService != null && ChoiceStageBGM != null)
+            audioService.PlayMusic(ChoiceStageBGM);
+
         if (choicePanel) choicePanel.SetActive(true);
-        // Normal tier: count stage progress
         AdvanceStage();
     }
+
 
     void AdvanceStage()
     {

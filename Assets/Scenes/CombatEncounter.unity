@@ -10123,10 +10123,13 @@ MonoBehaviour:
   cardRight: {fileID: 444095548}
   layerStageText: {fileID: 222334431}
   choicePanel: {fileID: 1041848788}
-  pausePanel: {fileID: 1685064076}
+  pausePanel: {fileID: 0}
   audioServiceSource: {fileID: 1541323250}
+  ChoiceStageBGM: {fileID: 0}
   normalBattleBGM: {fileID: 8300000, guid: cf2bc32dc721012469c0f60f1c97af81, type: 3}
   bossBattleBGM: {fileID: 8300000, guid: d05faa21191dfe64a92c70938981c459, type: 3}
+  GameWinBGM: {fileID: 8300000, guid: d05faa21191dfe64a92c70938981c459, type: 3}
+  GameOverBGM: {fileID: 8300000, guid: d05faa21191dfe64a92c70938981c459, type: 3}
 --- !u!1 &2104959612
 GameObject:
   m_ObjectHideFlags: 0
